@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single"
+        android:id="@+id/liked">
+        <item
+            android:icon="@drawable/favorite_icon_selector"
+            android:checkable="true"
+            android:title="liked"
+            app:showAsAction="always" />
+    </group>
+
+    <item
+        android:id="@+id/notification"
+        android:icon="@drawable/notifications"
+        android:title="Notifications"
+        app:showAsAction="always" />
+</menu>

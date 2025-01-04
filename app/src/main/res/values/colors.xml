@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gold">#FFB300</color>
+    <color name="colorDark">#12011B</color>
+    <color name="colorBlured">#45E3E3E3</color>
+    <color name="colorBlurVarient">#CC878889</color>
+    <color name="colorSkyBlue">#00B7FF</color>
+    <color name="colorPrimary">#D7FBB264</color>
+    <color name="colorPrimaryLight">#FFE6C9</color>
+    <color name="colorPrimaryDark">#FA972B</color>
+    <color name="colorPrimaryVariant">#FBC492</color>
+    <color name="colorSecondary">#12011B</color>
+    <color name="colorSurface">#FAF8F7</color>
+    <color name="colorSurfaceContainerHigh">#F4EFEA</color>
+    <color name="colorSurfaceContainerLow">#F4EFEA</color>
+    <color name="colorSurfaceContainerHighest">#F4EFEA</color>
+    <color name="colorOnSurface">#F19F20</color>
+    <color name="colorOnSurfaceVariant">#601D1B20</color>
+    <color name="colorOnSurfaceInverted">#FADBAC</color>
+    <color name="colorError">#FF0073</color>
+    <color name="colorDestructive">#EF4444</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorOnSecondary">#F19F20</color>
+    <color name="colorContainer">#F6F5F5</color>
+    <color name="colorDisabled">@android:color/darker_gray</color>
+    <color name="colorOnContainer">#BA945A</color>
+    <color name="colorSuccess">#2ECC71</color>
+</resources>

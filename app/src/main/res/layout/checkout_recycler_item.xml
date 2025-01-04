@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="8dp"
+    android:paddingBottom="8dp"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.Material3.CardView.Filled"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/colorBlured"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                style="@style/Widget.App.TextView.InvertedColor"
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toStartOf="@id/sub_item"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Title" />
+
+            <TextView
+                style="@style/Widget.App.TextView.InvertedColor"
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintBottom_toBottomOf="@id/total_price"
+                tools:hint="₹ 250.99" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_item"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:text="+"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:textColor="@color/colorSurface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sub_item"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:text="-"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:textColor="@color/colorSurface"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/item_count_card"
+                app:layout_constraintBottom_toBottomOf="@id/item_count_card"
+                app:layout_constraintTop_toTopOf="@id/item_count_card" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/item_count_card"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="2dp"
+                android:backgroundTint="@color/colorPrimaryVariant"
+                app:layout_constraintBottom_toBottomOf="@id/add_item"
+                app:layout_constraintEnd_toStartOf="@id/add_item"
+                app:layout_constraintTop_toTopOf="@id/add_item">
+
+                <TextView
+                    android:id="@+id/item_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="1"
+                    android:textColor="@color/colorDark"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                style="@style/Widget.App.TextView.InvertedColor"
+                android:id="@+id/total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="@id/add_item"
+                app:layout_constraintStart_toStartOf="@id/sub_item"
+                app:layout_constraintTop_toBottomOf="@id/item_count_card"
+                tools:hint="₹ 250.99"
+                android:text="₹ 0.00"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

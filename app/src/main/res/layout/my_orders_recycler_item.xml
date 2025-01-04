@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.Material3.CardView.Filled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorBlured">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/restaurant"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorDark" />
+
+            <TextView
+                style="@style/Widget.App.TextView.InvertedColor"
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="2"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Order 1" />
+
+
+            <TextView
+                style="@style/Widget.App.TextView.InvertedColor"
+                android:id="@+id/orderd_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:hint="00:00 PM"
+                app:layout_constraintStart_toStartOf="@id/title"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+<!--            <TextView-->
+<!--                style="@style/Widget.App.TextView.InvertedColor"-->
+<!--                android:textAppearance="@style/TextAppearance.Material3.LabelSmall"-->
+<!--                android:id="@+id/orderd_time_hint"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Ordered At"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/orderd_time"-->
+<!--                app:layout_constraintStart_toStartOf="@id/orderd_time"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/orderd_time" />-->
+
+<!--            <TextView-->
+<!--                style="@style/Widget.App.TextView.InvertedColor"-->
+<!--                android:id="@+id/eta"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:text="00:00 PM"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/eta_hint"-->
+<!--                app:layout_constraintStart_toStartOf="@id/eta_hint"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/title" />-->
+
+<!--            <TextView-->
+<!--                style="@style/Widget.App.TextView.InvertedColor"-->
+<!--                android:textAppearance="@style/TextAppearance.Material3.LabelSmall"-->
+<!--                android:id="@+id/eta_hint"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:hint="ETA Of Next Item"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/orderd_time_hint"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/eta" />-->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dropdown_btn"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:iconTint="@color/colorOnContainer"
+                android:focusable="false"
+                android:clickable="false"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="expad layout"
+                android:rotation="90"
+                app:icon="@drawable/arrow_forward"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/image" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/items_recycler"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/image" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ordered_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:tint="@color/colorSuccess"
+                android:src="@drawable/check_circle"
+                app:layout_constraintEnd_toEndOf="@id/ordered_hint"
+                app:layout_constraintStart_toStartOf="@id/ordered_hint"
+                app:layout_constraintTop_toBottomOf="@id/items_recycler" />
+
+            <TextView
+                style="@style/Widget.App.TextView.InvertedColor"
+                android:id="@+id/ordered_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:hint="Ordered"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ordered_img" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/preparing_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/cooking"
+                android:tint="@color/colorDark"
+                app:layout_constraintEnd_toEndOf="@id/preparing_hint"
+                app:layout_constraintStart_toStartOf="@id/preparing_hint"
+                app:layout_constraintTop_toBottomOf="@id/items_recycler" />
+
+            <TextView
+                style="@style/Widget.App.TextView.InvertedColor"
+                android:id="@+id/preparing_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Preparing"
+                app:layout_constraintEnd_toStartOf="@id/received_hint"
+                app:layout_constraintStart_toEndOf="@id/ordered_hint"
+                app:layout_constraintTop_toBottomOf="@id/preparing_img" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/received_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/fact_check"
+                android:tint="@color/colorDark"
+                app:layout_constraintEnd_toEndOf="@id/received_hint"
+                app:layout_constraintStart_toStartOf="@id/received_hint"
+                app:layout_constraintTop_toBottomOf="@id/items_recycler" />
+
+            <TextView
+                style="@style/Widget.App.TextView.InvertedColor"
+                android:id="@+id/received_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:hint="Received"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/received_img" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_marginStart="-4dp"
+                android:layout_marginEnd="-4dp"
+                android:translationZ="-4dp"
+                app:layout_constraintBottom_toBottomOf="@id/preparing_img"
+                app:layout_constraintEnd_toStartOf="@id/received_img"
+                app:layout_constraintStart_toEndOf="@id/preparing_img"
+                app:layout_constraintTop_toTopOf="@id/preparing_img" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_marginStart="-4dp"
+                android:layout_marginEnd="-4dp"
+                android:translationZ="-4dp"
+                app:layout_constraintBottom_toBottomOf="@id/ordered_img"
+                app:layout_constraintEnd_toStartOf="@id/preparing_img"
+                app:layout_constraintStart_toEndOf="@id/ordered_img"
+                app:layout_constraintTop_toTopOf="@id/ordered_img" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

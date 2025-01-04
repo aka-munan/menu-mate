@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:width="2325.4dp" android:height="2325.4dp">
+        <shape
+            android:shape="rectangle">
+            <corners android:radius="124dp" />
+            <solid android:color="@color/colorOnPrimary" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/logo"/>
+</layer-list>

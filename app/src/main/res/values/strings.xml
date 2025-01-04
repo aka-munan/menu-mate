@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Menu Mate</string>
+    <string name="slogan">Increase your restaurant’s efficiency and customer satisfaction by adopting Menu Mate, the ultimate tool for managing incoming orders!</string>
+    <string translatable="false" name="web_client_id">96729269242-oblpj77squ3nl5e6d2o0aote8heb2kc1.apps.googleusercontent.com</string>
+    <string name="forgot_password_message">Please reset your password through the link sent to your email</string>
+    <string name="generate_qr_label">Effortlessly generate QR (Quick Response) codes for the tables in your restaurant. These QR codes can be scanned using any mobile device, providing seamless access to your restaurant\'s menu.</string>
+</resources>
